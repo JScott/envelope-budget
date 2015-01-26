@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="budgetApp">
+<head>
+  <meta charset="UTF-8" />
+  <title>Envelopes</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+  <script src="budget.js"></script>
+</head>
+<body ng-controller="EnvelopeCtrl">
+  <div class="envelope" ng-repeat="envelope in envelopes">
+    <h1>{{ envelope.name }}</h1>
+    <p>{{ envelope.income }}</p>
+    <p>{{ envelope.start }}</p>
+  </div>
+  <div class="newEnvelope">
+    <input type="text" ng-model="newEnvelope.name" />
+    <input type="number" ng-model="newEnvelope.income" />
+    <input type="date" ng-model="newEnvelope.start" />
+    <input type="button" ng-click="save()" value="Save" />
+  </div>
+</body>
+</html>
